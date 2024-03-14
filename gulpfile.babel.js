@@ -5,11 +5,12 @@ import dartSass from "dart-sass";
 import livereload from "gulp-livereload";
 import minify from "gulp-minify";
 import gcmq from "gulp-group-css-media-queries";
+import cleanCSS from'gulp-clean-css';
     
 const sass = gulpSass(dartSass);
 
 gulp.task('sass', function () {
-	return gulp.src(['assets/sass/**/*.scss'])
+	return gulp.src(['assets/scss/**/*.scss'])
 		.pipe(sass())
 		.on('error', sass.logError)
 		.pipe(autoprefixer())
@@ -20,14 +21,22 @@ gulp.task('sass', function () {
 
 gulp.task('js', function () {
 	return gulp.src('assets/js/src/*.js')
-		.pipe(minify({
-			ext: {
-				min: '.min.js'
-			},
-			noSource: true
-		})) // Mifify js (opt.)
+		// .pipe(minify({
+		// 	ext: {
+		// 		min: '.min.js'
+		// 	},
+		// 	noSource: true
+		// })) // Mifify js (opt.)
 		.pipe(gulp.dest('assets/js'))
 		.pipe(livereload());
+});
+
+gulp.task('css-minify', function(){
+    return gulp.src('./style.css')
+        .pipe(cleanCSS({
+            compatibility: "ie8"
+        }))
+        .pipe(gulp.dest('./'))
 });
 
 gulp.task('watch', function () {

@@ -1,0 +1,36 @@
+/* Breakpoints */
+@mixin sm-screen-down {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin tablet-screen-down {
+	@media screen and (max-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin sm-screen-up {
+	@media screen and (min-width: 769px) {
+		@content;
+	}
+}
+
+@mixin tablet-screen-up {
+	@media screen and (min-width: 1025px) {
+		@content;
+	}
+}
+
+@mixin xl-screen-up {
+	@media screen and (min-width: 1441px) {
+		@content;
+	}
+}
+
+@mixin xxl-screen-up {
+	@media screen and (min-width: 1921px) {
+		@content;
+	}
+}
