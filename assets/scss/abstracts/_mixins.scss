@@ -132,3 +132,16 @@
 	-o-transition: $property $ease $duration;
 	transition: $property $ease $duration;
 }
+
+/* Shadow */
+@mixin box-shadow($inset: false, $top: 0, $left: 0, $blur: 0, $spread: 0.3125rem, $color: #757575) {
+	@if $inset {
+		-webkit-box-shadow:inset $top $left $blur $spread $color;
+		-moz-box-shadow:inset $top $left $blur $spread $color;
+		box-shadow:inset $top $left $blur $spread $color;
+	} @else {
+		-webkit-box-shadow: $top $left $blur $spread $color;
+		-moz-box-shadow: $top $left $blur $spread $color;
+		box-shadow: $top $left $blur $spread $color;
+	}
+}

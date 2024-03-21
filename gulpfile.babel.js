@@ -5,16 +5,18 @@ import dartSass from "dart-sass";
 import livereload from "gulp-livereload";
 import minify from "gulp-minify";
 import gcmq from "gulp-group-css-media-queries";
-import cleanCSS from'gulp-clean-css';
+import cleanCSS from "gulp-clean-css";
+import concatCss from "gulp-concat-css";
     
 const sass = gulpSass(dartSass);
 
-gulp.task('sass', function () {
+gulp.task('scss', function () {
 	return gulp.src(['assets/scss/**/*.scss'])
 		.pipe(sass())
 		.on('error', sass.logError)
 		.pipe(autoprefixer())
 		.pipe(gcmq())
+		.pipe(concatCss("./styles.css"))
 		.pipe(gulp.dest('./'))
 		.pipe(livereload());
 });
@@ -42,10 +44,10 @@ gulp.task('css-minify', function(){
 gulp.task('watch', function () {
 	livereload.listen();
 
-	gulp.watch('assets/sass/**/*.scss', gulp.series('sass'));
+	gulp.watch('assets/scss/**/*.scss', gulp.series('scss'));
 	gulp.watch('assets/js/libs/**/*.js', gulp.series('js'));
 	gulp.watch('assets/js/src/*.js', gulp.series('js'));
 });
 
 
-gulp.task('default', gulp.series('sass', 'js', 'watch'));
+gulp.task('default', gulp.series('scss', 'js', 'watch'));

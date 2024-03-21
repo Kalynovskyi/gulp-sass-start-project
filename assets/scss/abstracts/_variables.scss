@@ -6,8 +6,8 @@ $font-action: "DM Sans", sans-serif;
 $font-code: menlo, monaco, consolas, "Lucida Console", monospace;
 
 /* Colors */
-$accent-color: black;
-$secondary-color: white;
+$accent-color: #000000;
+$secondary-color: #565656;
 
 /* Text size */
 $font-size-main: 1.025rem;
@@ -42,3 +42,12 @@ $font-size-h6: 1em;
 /* Transition */
 $transition-function: cubic-bezier(.645, .045, .355, 1);
 $transition-duration: .35s;
+
+/* Units */
+$unit-measure-20px: 1.25rem;
+$unit-measure-25px: 1.5625rem;
+$unit-measure-30px: 1.875rem;
+$unit-measure-40px: 2.5rem;
+$unit-measure-60px: 3.75rem;
+$unit-measure-90px: 5.625rem; 
+$unit-measure-146px: 9.125rem;
