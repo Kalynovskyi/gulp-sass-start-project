@@ -5,8 +5,20 @@
 	}
 }
 
-@mixin tablet-screen-down {
+@mixin md-screen-down {
 	@media screen and (max-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin xl-screen-down {
+	@media screen and (max-width: 1440px) {
+		@content;
+	}
+}
+
+@mixin xxl-screen-down {
+	@media screen and (max-width: 1920px) {
 		@content;
 	}
 }
@@ -17,7 +29,7 @@
 	}
 }
 
-@mixin tablet-screen-up {
+@mixin md-screen-up {
 	@media screen and (min-width: 1025px) {
 		@content;
 	}
