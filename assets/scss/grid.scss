@@ -29,31 +29,25 @@
         justify-content: space-evenly;
     }
 
-    align-start {
+    &-align-start {
         align-items: start;
     }
 
-    align-end {
+    &-align-end {
         align-items: end;
     }
 
-    align-end {
-        align-items: end;
+    &-align-center {
+        align-items: center;
     }
 
-    align-cener {
-        align-items: cener;
-    }
-
-    align-stretch {
+    &-align-stretch {
         align-items: stretch;
     }
 
-    align-baseline {
+    &-align-baseline {
         align-items: baseline;
     }
-
-
 
     //remove
     margin: 20px 0;
