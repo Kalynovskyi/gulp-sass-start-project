@@ -1,4 +1,10 @@
 /* Breakpoints */
+@mixin xsm-screen-down {
+	@media screen and (max-width: 576px) {
+		@content;
+	}
+}
+
 @mixin sm-screen-down {
 	@media screen and (max-width: 768px) {
 		@content;
@@ -19,6 +25,12 @@
 
 @mixin xxl-screen-down {
 	@media screen and (max-width: 1920px) {
+		@content;
+	}
+}
+
+@mixin xsm-screen-up {
+	@media screen and (max-width: 577px) {
 		@content;
 	}
 }
@@ -156,4 +168,10 @@
 		-moz-box-shadow: $top $left $blur $spread $color;
 		box-shadow: $top $left $blur $spread $color;
 	}
+}
+
+/*Typography*/
+
+@mixin fluid-typo($min-unit: 1rem , $fluid-size: 6vw, $max-unit: 2rem) {
+	font-size: clamp($min-unit, $fluid-size, $max-unit);
 }

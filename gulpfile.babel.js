@@ -14,10 +14,10 @@ gulp.task('scss', function () {
 	return gulp.src(['assets/scss/**/*.scss'])
 		.pipe(sass())
 		.on('error', sass.logError)
-		.pipe(autoprefixer())
 		.pipe(gcmq())
 		.pipe(concatCss("./styles.css"))
 		.pipe(gulp.dest('./'))
+		.pipe(autoprefixer())
 		.pipe(livereload());
 });
 
@@ -29,12 +29,12 @@ gulp.task('js', function () {
 		// 	},
 		// 	noSource: true
 		// })) // Mifify js (opt.)
-		.pipe(gulp.dest('assets/js'))
+		//.pipe(gulp.dest('assets/js'))
 		.pipe(livereload());
 });
 
 gulp.task('css-minify', function(){
-    return gulp.src('./style.css')
+    return gulp.src('./styles.css')
         .pipe(cleanCSS({
             compatibility: "ie8"
         }))

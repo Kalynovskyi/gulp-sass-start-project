@@ -3,7 +3,12 @@
 /* Flex grid */
 .flex-row {
     display: flex;
-    margin: 0 -$unit-measure-20px;
+    flex-wrap: wrap;
+    margin: 0 -#{$unit-measure-20px};
+
+    @include sm-screen-down() {
+        margin: initial;
+    }
 
     &-justify-center {
         justify-content: center;
@@ -49,109 +54,110 @@
         align-items: baseline;
     }
 
-    //remove
-    margin: 20px 0;
-    
     /* Column Desktop */
-    [class^="flex-col-"] {
+    [class*="flex-col-"] {
         margin: 0 $unit-measure-20px;
 
         //remove
         height: 100px;
         background-color: green;
+
+        @include sm-screen-down {
+            margin: initial;
+        }
     }
 
     .flex-col-1 {
-        width: calc(100%/12);
+        width: calc(100%/12 - #{$unit-measure-20px} * 2);
     }
 
     .flex-col-2 {
-        width: calc(100%/12 * 2);
+        width: calc((100%/12 * 2) - #{$unit-measure-20px} * 2);
     }
 
     .flex-col-3 {
-        width: calc(100%/12 * 3);
+        width: calc((100%/12 * 3) - #{$unit-measure-20px} * 2);
     }
 
     .flex-col-4 {
-        width: calc(100%/12 * 4);
+        width: calc((100%/12 * 4) - #{$unit-measure-20px} * 2);
     }
 
     .flex-col-5 {
-        width: calc(100%/12 * 5);
+        width: calc((100%/12 * 5)  - #{$unit-measure-20px} * 2);
     }
 
     .flex-col-6 {
-        width: calc(100%/12 * 6);
+        width: calc((100%/12 * 6) - #{$unit-measure-20px} * 2);
     }
 
     .flex-col-7 {
-        width: calc(100%/12 * 7);
+        width: calc((100%/12 * 7 ) - #{$unit-measure-20px} * 2);
     }
 
     .flex-col-8 {
-        width: calc(100%/12 * 8);
+        width: calc((100%/12 * 8) - #{$unit-measure-20px} * 2);
     }
 
     .flex-col-9 {
-        width: calc(100%/12 * 9);
+        width: calc((100%/12 * 9) - #{$unit-measure-20px} * 2);
     }
 
     .flex-col-10 {
-        width: calc(100%/12 * 10);
+        width: calc((100%/12 * 10) - #{$unit-measure-20px} * 2);
     }
 
     .flex-col-11 {
-        width: calc(100%/12 * 11);
+        width: calc((100%/12 * 11) - #{$unit-measure-20px} * 2);
     }
 
     .flex-col-12 {
-        width: 100%;
+        width: calc(100% - #{$unit-measure-20px} * 2);
     }
 
     /* Offset Desktop*/
     .flex-offset-1 {
-        margin-left: calc(100%/12);
+        margin-left: calc(100%/12 + #{$unit-measure-20px});
     }
 
     .flex-offset-2 {
-        margin-left: calc(100%/12 * 2);
+        margin-left: calc(100%/12 * 2 + #{$unit-measure-20px});
     }
 
     .flex-offset-3 {
-        margin-left: calc(100%/12 * 3);
+        margin-left: calc(100%/12 * 3 + #{$unit-measure-20px});
     }
 
     .flex-offset-4 {
-        margin-left: calc(100%/12 * 4);
+        margin-left: calc(100%/12 * 4 + #{$unit-measure-20px});
     }
 
     .flex-offset-5 {
-        margin-left: calc(100%/12 * 5);
+        margin-left: calc(100%/12 * 5 + #{$unit-measure-20px});
     }
 
     .flex-offset-6 {
-        margin-left: calc(100%/12 * 6);
+        margin-left: calc(100%/12 * 6 + #{$unit-measure-20px});
     }
 
     .flex-offset-7 {
-        margin-left: calc(100%/12 * 7);
+        margin-left: calc(100%/12 * 7 + #{$unit-measure-20px});
     }
 
     .flex-offset-8 {
-        margin-left: calc(100%/12 * 8);
+        margin-left: calc(100%/12 * 8 + #{$unit-measure-20px});
     }
 
     .flex-offset-9 {
-        margin-left: calc(100%/12 * 9);
+        margin-left: calc(100%/12 * 9 + #{$unit-measure-20px});
     }
 
     .flex-offset-10 {
-        margin-left: calc(100%/12 * 10);
+        margin-left: calc(100%/12 * 10 + #{$unit-measure-20px});
     }
 
     .flex-offset-11 {
-        margin-left: calc(100%/12 * 11);
+        margin-left: calc(100%/12 * 11 + #{$unit-measure-20px});
     }
 
     .flex-offset-12 {
@@ -160,96 +166,100 @@
 
     @include md-screen-down {
         .flex-col-md-1 {
-            width: calc(100%/12);
+            width: calc(100%/12 - #{$unit-measure-20px} * 2);
         }
     
         .flex-col-md-2 {
-            width: calc(100%/12 * 2);
+            width: calc(100%/12 * 2 - #{$unit-measure-20px} * 2);
         }
     
         .flex-col-md-3 {
-            width: calc(100%/12 * 3);
+            width: calc(100%/12 * 3 - #{$unit-measure-20px} * 2);
         }
     
         .flex-col-md-4 {
-            width: calc(100%/12 * 4);
+            width: calc(100%/12 * 4 - #{$unit-measure-20px} * 2);
         }
     
         .flex-col-md-5 {
-            width: calc(100%/12 * 5);
+            width: calc(100%/12 * 5 - #{$unit-measure-20px} * 2);
         }
     
         .flex-col-md-6 {
-            width: calc(100%/12 * 6);
+            width: calc(100%/12 * 6 - #{$unit-measure-20px} * 2);
         }
     
         .flex-col-md-7 {
-            width: calc(100%/12 * 7);
+            width: calc(100%/12 * 7 - #{$unit-measure-20px} * 2);
         }
     
         .flex-col-md-8 {
-            width: calc(100%/12 * 8);
+            width: calc(100%/12 * 8 - #{$unit-measure-20px} * 2);
         }
     
         .flex-col-md-9 {
-            width: calc(100%/12 * 9);
+            width: calc(100%/12 * 9 - #{$unit-measure-20px} * 2);
         }
     
         .flex-col-md-10 {
-            width: calc(100%/12 * 10);
+            width: calc(100%/12 * 10 - #{$unit-measure-20px} * 2);
         }
     
         .flex-col-md-11 {
-            width: calc(100%/12 * 11);
+            width: calc(100%/12 * 11 - #{$unit-measure-20px} * 2);
         }
     
         .flex-col-md-12 {
-            width: 100%;
+            width: calc(100% - #{$unit-measure-20px} * 2);
         }
     
         /* Offset Desktop*/
+        .flex-offset-md-0 {
+            margin: 0 1.25rem;
+        }
+
         .flex-offset-md-1 {
-            margin-left: calc(100%/12);
+            margin-left: calc(100%/12 + #{$unit-measure-20px});
         }
     
         .flex-offset-md-2 {
-            margin-left: calc(100%/12 * 2);
+            margin-left: calc(100%/12 * 2 + #{$unit-measure-20px});
         }
     
         .flex-offset-md-3 {
-            margin-left: calc(100%/12 * 3);
+            margin-left: calc(100%/12 * 3 + #{$unit-measure-20px});
         }
     
         .flex-offset-md-4 {
-            margin-left: calc(100%/12 * 4);
+            margin-left: calc(100%/12 * 4 + #{$unit-measure-20px});
         }
     
         .flex-offset-md-5 {
-            margin-left: calc(100%/12 * 5);
+            margin-left: calc(100%/12 * 5 + #{$unit-measure-20px});
         }
     
         .flex-offset-md-6 {
-            margin-left: calc(100%/12 * 6);
+            margin-left: calc(100%/12 * 6 + #{$unit-measure-20px});
         }
     
         .flex-offset-md-7 {
-            margin-left: calc(100%/12 * 7);
+            margin-left: calc(100%/12 * 7 + #{$unit-measure-20px});
         }
     
         .flex-offset-md-8 {
-            margin-left: calc(100%/12 * 8);
+            margin-left: calc(100%/12 * 8 + #{$unit-measure-20px});
         }
     
         .flex-offset-md-9 {
-            margin-left: calc(100%/12 * 9);
+            margin-left: calc(100%/12 * 9 + #{$unit-measure-20px});
         }
     
         .flex-offset-md-10 {
-            margin-left: calc(100%/12 * 10);
+            margin-left: calc(100%/12 * 10 + #{$unit-measure-20px});
         }
     
         .flex-offset-md-11 {
-            margin-left: calc(100%/12 * 11);
+            margin-left: calc(100%/12 * 11 + #{$unit-measure-20px});
         }
     
         .flex-offset-md-12 {
@@ -304,10 +314,14 @@
         }
     
         .flex-col-sm-12 {
-            width: 100%;
+            width: calc(100%);
         }
     
         /* Offset Desktop*/
+        .flex-offset-sm-0 {
+            margin: initial;
+        }
+
         .flex-offset-sm-1 {
             margin-left: calc(100%/12);
         }
